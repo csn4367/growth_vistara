@@ -1,0 +1,703 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Growth Vistara | Growth with direction.</title>
+<meta name="description" content="Growth Vistara connects creative thinking with digital execution: branding, websites, performance marketing and customer communication working as one system.">
+<meta property="og:title" content="Growth Vistara | Growth with direction.">
+<meta property="og:description" content="Clear ideas. Meaningful growth.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="assets/favicon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@300;600;700;800&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
+<style>
+/* ===== Growth Vistara · Brand Book v1.0 tokens (solid colours only) ===== */
+:root{
+  --blue:#186DFE; --ink:#000; --white:#fff; --mist:#F2F5FA; --sky:#DCE8FF; --slate:#5A6270; --line:#D9DEE8;
+  --display:'Sora',system-ui,sans-serif; --body:'Manrope',system-ui,sans-serif;
+  --pad:clamp(20px,5vw,56px); --max:1240px; --r:24px; --nav:64px;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--nav) + 12px);overflow-x:clip}
+body{margin:0;font:400 17px/1.6 var(--body);color:var(--ink);background:var(--white);-webkit-font-smoothing:antialiased;overflow-x:clip}
+img,svg{display:block;max-width:100%} a{color:inherit} button{font:inherit}
+h1,h2,h3,h4,p{margin:0} h1,h2,h3,h4{font-family:var(--display);letter-spacing:-.03em}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.ic{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+.sec{padding:clamp(72px,12vw,150px) 0}
+.dark{background:var(--ink);color:var(--white)} .mist{background:var(--mist)}
+.skip{position:absolute;left:-999px;top:8px;background:var(--blue);color:#fff;padding:10px 16px;z-index:200;border-radius:99px}.skip:focus{left:8px}
+.bar{position:fixed;inset:0 0 auto 0;height:4px;background:var(--blue);transform:scaleX(var(--sp,0));transform-origin:0 50%;z-index:120}
+
+/* type helpers */
+.tag{display:inline-flex;align-items:center;gap:8px;font:700 13px var(--body);color:var(--blue);background:var(--sky);padding:7px 14px;border-radius:99px;margin-bottom:22px}
+.dark .tag{background:#0B1F44;color:#9CC0FF}
+.h2{font:800 clamp(34px,8.4vw,80px)/1 var(--display);letter-spacing:-.04em;max-width:15ch}
+.lead{font-size:clamp(17px,2.3vw,20px);color:var(--slate);max-width:52ch}.dark .lead{color:#C5CCD8}
+.out{color:transparent;-webkit-text-stroke:2px currentColor}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:12px 26px;border-radius:99px;font:700 16px var(--body);text-decoration:none;cursor:pointer;border:2px solid var(--ink);background:var(--ink);color:#fff;transition:transform .2s cubic-bezier(.3,1.6,.5,1),background .2s,color .2s,border-color .2s}
+.btn:hover{transform:translateY(-3px) rotate(-1deg)} .btn:active{transform:scale(.97)}
+.btn.blue{background:var(--blue);border-color:var(--blue)} .btn.blue:hover{background:#fff;color:var(--blue)}
+.btn.ghost{background:transparent;color:inherit;border-color:currentColor}.btn.ghost:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.dark .btn.ghost:hover{background:#fff;color:#000;border-color:#fff}
+.btn .ic{width:20px;height:20px;transition:transform .25s}.btn:hover .ic{transform:translate(3px,-3px)}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.94);border-bottom:2px solid var(--ink)}
+.nav .wrap{height:var(--nav);display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font:800 17px var(--display);letter-spacing:-.02em}
+.sym{background:var(--sym) center/contain no-repeat;display:block}
+.brand .sym{width:44px;height:26px;background-color:var(--ink);border-radius:8px;background-size:78%;transition:transform .6s cubic-bezier(.3,1.6,.5,1)}
+.brand.spin .sym{transform:rotate(360deg) scale(1.15)}
+.brand small{font:300 11px var(--display);letter-spacing:.34em;color:var(--blue);margin-left:.4em}
+.links{display:none;align-items:center;gap:6px}
+.links a:not(.btn){padding:10px 16px;border-radius:99px;font-weight:600;font-size:15px;text-decoration:none;transition:background .2s}
+.links a:not(.btn):hover{background:var(--mist)}.links .btn{min-height:44px;padding:8px 22px;font-size:15px}
+.burger{width:48px;height:48px;border-radius:50%;border:2px solid var(--ink);background:#fff;display:grid;place-items:center;cursor:pointer;font-size:22px}
+@media(min-width:900px){.links{display:flex}.burger{display:none}}
+.sheet{position:fixed;inset:0;z-index:150;background:var(--ink);color:#fff;display:flex;flex-direction:column;padding:20px var(--pad) 32px;transform:translateY(-100%);visibility:hidden;transition:transform .45s cubic-bezier(.7,0,.2,1),visibility 0s .45s}
+.sheet.open{transform:none;visibility:visible;transition:transform .45s cubic-bezier(.7,0,.2,1)}
+.sheet header{display:flex;justify-content:space-between;align-items:center;height:48px}
+.sheet .burger{background:transparent;color:#fff;border-color:#fff}
+.sheet nav{display:grid;gap:4px;margin:auto 0}
+.sheet nav a{font:800 clamp(40px,12vw,64px)/1.15 var(--display);letter-spacing:-.04em;text-decoration:none;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #222;padding:6px 0}
+.sheet nav a:active{color:var(--blue)} .sheet nav a .ic{font-size:.5em;color:var(--blue)}
+
+/* hero */
+.hero{padding:clamp(32px,6vw,72px) 0 0;position:relative;overflow:clip}
+.hero .wrap{display:grid;gap:12px;align-items:center}
+.hero .tag{margin-bottom:20px}
+.hero h1{font:800 clamp(46px,13.2vw,132px)/.95 var(--display);letter-spacing:-.05em}
+.hero h1 .w{display:inline-block;overflow:clip;vertical-align:top;padding:.06em .14em .12em;margin:0 -.14em}
+.hero h1 .w>span{display:inline-block}
+.js .hero h1 .w>span{transform:translateY(110%);animation:up .8s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:calc(var(--i)*.07s + .1s)}
+.hero h1 .hl{display:inline-block;background:var(--blue);color:#fff;padding:0 .18em .06em;border-radius:.22em;transform:rotate(-3deg);margin:0 .04em;animation:wob 4.5s ease-in-out 1.2s infinite}
+.hero .lead{margin:24px 0 30px}
+.ctas{display:flex;flex-wrap:wrap;gap:12px}.ctas .btn{flex:1 1 220px}
+.art{position:relative;width:min(100%,420px);aspect-ratio:1;margin:14px auto 0;--hp:0}
+.art svg.arrow{width:100%;height:100%;overflow:visible}
+.art .go{transform:translate(calc(var(--hp)*60px),calc(var(--hp)*-60px))}
+.art .shaft{stroke-dasharray:1;stroke-dashoffset:1;animation:draw 1s .5s cubic-bezier(.6,0,.2,1) forwards}
+.art .head{transform-box:fill-box;transform-origin:100% 0;transform:scale(0);animation:pop .6s 1.35s cubic-bezier(.3,1.8,.5,1) forwards;}
+.art .dot{transform-box:fill-box;transform-origin:center;animation:pulse 2s ease-in-out infinite}
+.badge{position:absolute;left:-2%;bottom:2%;width:34%;aspect-ratio:1;animation:spin 18s linear infinite}
+.badge svg{width:100%;height:100%} .badge text{font:700 11.4px var(--display);letter-spacing:.14em;fill:#fff}
+.badge .c{position:absolute;inset:0;display:grid;place-items:center}
+.chip{position:absolute;display:inline-flex;align-items:center;gap:8px;background:#fff;border:2px solid var(--ink);border-radius:99px;padding:8px 16px 8px 10px;font:700 14px var(--body);animation:bob 4s ease-in-out infinite;animation-delay:var(--d,0s);white-space:nowrap}
+.chip i{width:28px;height:28px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;font-size:16px}
+.chip.a{top:6%;left:0;--d:-1s}.chip.b{top:44%;right:-2%;--d:-2s}.chip.c2{bottom:8%;right:12%;--d:-3s;display:none}
+.js .hero .rise{opacity:0;animation:fade .8s .5s forwards}
+@media(min-width:900px){.hero h1{font-size:clamp(60px,7vw,108px)}.hero .wrap{grid-template-columns:1.3fr 1fr;gap:32px}.art{margin:0 0 0 auto;width:100%}.chip.c2{display:inline-flex}}
+.marq{margin-top:clamp(40px,7vw,80px);background:var(--ink);color:#fff;overflow:hidden;border-block:2px solid var(--ink)}
+.marq div{display:flex;width:max-content;animation:marq 38s linear infinite}
+.marq:hover div{animation-play-state:paused}
+.marq span{display:inline-flex;align-items:center;gap:20px;padding:16px 10px 16px 0;font:700 clamp(18px,3vw,26px) var(--display);letter-spacing:-.02em;white-space:nowrap}
+.marq span .ic{color:var(--blue);width:22px;height:22px}
+
+/* problem */
+.problem{--p:1}
+.problem .grid{display:grid;gap:44px}
+.close{font:300 clamp(26px,5vw,44px)/1.15 var(--display);letter-spacing:-.03em;margin-top:36px;max-width:18ch}
+.close b{font-weight:800;color:var(--blue)}
+.scatter{position:relative;min-height:380px;overflow:hidden;padding-left:18px}
+.scatter:before{content:"";position:absolute;left:6px;top:0;bottom:0;width:4px;background:var(--ink);border-radius:4px;transform:scaleY(var(--p));transform-origin:top}
+.pc{position:absolute;left:18px;top:calc(var(--i)*19% + 1%);display:inline-flex;align-items:center;gap:10px;font:700 clamp(18px,4.6vw,26px) var(--display);background:#fff;border:2px solid var(--ink);border-radius:99px;padding:9px 22px 9px 10px;letter-spacing:-.02em;
+  transform:translate(calc((1 - var(--p))*var(--x)),calc((1 - var(--p))*var(--y))) rotate(calc((1 - var(--p))*var(--r)))}
+.pc i{width:34px;height:34px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;font-size:18px}
+.pc.on{background:var(--blue);border-color:var(--blue);color:#fff}.pc.on i{background:#fff;color:var(--blue)}
+@media(min-width:900px){.problem .grid{grid-template-columns:1fr 1fr;align-items:center;gap:80px}.scatter{min-height:440px}}
+
+/* system */
+.system{--p:1}
+.sys{position:relative;display:grid;gap:16px;margin-top:48px}
+.hub{width:132px;height:132px;margin:0 auto 8px;border-radius:50%;background:var(--blue);display:grid;place-items:center;position:relative;transform:scale(calc(.6 + .4*var(--p)))}
+.hub:after{content:"";position:absolute;inset:-12px;border:2px dashed #3C79E8;border-radius:50%;animation:spin 20s linear infinite}
+.hub .sym{width:78%;height:60%;background-image:var(--symw)}
+.pill{background:#0D0D0D;border:2px solid #222;border-radius:var(--r);padding:24px;display:grid;gap:10px;transition:border-color .2s,transform .25s cubic-bezier(.3,1.6,.5,1);transform:translateY(calc((1 - var(--p))*30px));opacity:calc(.3 + .7*var(--p))}
+.pill:hover{border-color:var(--blue);transform:translateY(-4px) rotate(-.6deg)}
+.pill i{width:48px;height:48px;border-radius:50%;background:var(--blue);display:grid;place-items:center;font-size:24px}
+.pill small{font:700 13px var(--body);color:#9CC0FF}.pill h3{font:800 28px var(--display)}.pill p{color:#C5CCD8;font-size:16px}
+@media(min-width:760px){.sys{grid-template-columns:1fr 1fr;gap:20px 150px}.hub{position:absolute;left:50%;top:50%;margin:0;transform:translate(-50%,-50%) scale(calc(.6 + .4*var(--p)));width:170px;height:170px;z-index:2}}
+
+/* services */
+.tabs{position:sticky;top:var(--nav);z-index:60;background:rgba(255,255,255,.96);margin:40px calc(var(--pad)*-1) 0;padding:12px var(--pad);display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;border-bottom:1px solid var(--line)}
+.tabs::-webkit-scrollbar{display:none}
+.tabs a{flex:none;display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:99px;border:2px solid var(--ink);font:700 14px var(--body);text-decoration:none;background:#fff;transition:background .2s,color .2s}
+.tabs a:hover,.tabs a:active{background:var(--ink);color:#fff}.tabs a .ic{color:var(--blue)}
+.cat{padding-top:56px}.cat h3{display:flex;align-items:center;gap:14px;font:800 clamp(24px,6vw,36px) var(--display);margin-bottom:6px}
+.cat h3 span{width:44px;height:44px;border-radius:14px;background:var(--blue);color:#fff;display:grid;place-items:center;font-size:24px;transform:rotate(-6deg)}
+.cat>p{color:var(--slate);margin:0 0 20px 58px}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,270px),1fr));gap:14px}
+.card{position:relative;isolation:isolate;background:transparent;border:0;border-radius:var(--r);padding:24px;display:flex;flex-direction:column;gap:10px;transition:transform .3s cubic-bezier(.3,1.6,.5,1)}
+.card:before{content:"";position:absolute;inset:0;background:var(--blue);border-radius:var(--r);z-index:-2;transition:transform .25s}.card:after{content:"";position:absolute;inset:0;background:#fff;border:2px solid var(--ink);border-radius:var(--r);z-index:-1}
+.card:hover,.card:focus-within{transform:translate(-5px,-5px)}.card:hover:before,.card:focus-within:before{transform:translate(5px,5px)}
+.card:active{transform:scale(.98)}
+.card .i{width:56px;height:56px;border-radius:50%;background:var(--sky);color:var(--blue);display:grid;place-items:center;font-size:28px;transition:transform .4s cubic-bezier(.3,1.8,.5,1),background .2s,color .2s}
+.card:hover .i{transform:rotate(-12deg) scale(1.12);background:var(--blue);color:#fff}
+.card h4{font:700 21px/1.2 var(--display);letter-spacing:-.02em}.card p{color:var(--slate);font-size:16px;flex:1}
+.card .go{align-self:flex-start;display:inline-flex;align-items:center;gap:6px;margin-top:6px;min-height:44px;padding:8px 18px;border-radius:99px;border:2px solid var(--ink);background:#fff;font:700 14px var(--body);cursor:pointer;transition:background .2s,color .2s}
+.card .go:hover{background:var(--ink);color:#fff}.card .go .ic{width:16px;height:16px}
+.cats{isolation:isolate}
+
+/* process */
+.steps{list-style:none;margin:56px 0 0;padding:0 0 0 30px;display:grid;gap:34px;position:relative;--p:1}
+.steps:before{content:"";position:absolute;left:9px;top:8px;bottom:8px;width:4px;background:var(--line);border-radius:4px}
+.steps:after{content:"";position:absolute;left:9px;top:8px;bottom:8px;width:4px;background:var(--blue);border-radius:4px;transform:scaleY(var(--p));transform-origin:top}
+.steps li{position:relative}.steps li:before{content:"";position:absolute;left:-29px;top:6px;width:22px;height:22px;border-radius:50%;background:#fff;border:4px solid var(--blue)}
+.steps b{font:800 14px var(--display);color:var(--blue)}.steps h3{font:800 30px var(--display);margin:2px 0 6px}.steps p{color:var(--slate);font-size:16px;max-width:30ch}
+@media(min-width:900px){.steps{grid-template-columns:repeat(4,1fr);gap:28px;padding:36px 0 0}
+ .steps:before,.steps:after{left:0;right:0;top:9px;bottom:auto;height:4px;width:auto}.steps:after{transform:scaleX(var(--p));transform-origin:left}
+ .steps li:before{left:0;top:-36px}}
+
+/* work */
+.work{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;margin:44px calc(var(--pad)*-1) 0;padding:6px var(--pad) 20px;scrollbar-width:none}.work::-webkit-scrollbar{display:none}
+.proj{flex:0 0 min(78vw,320px);scroll-snap-align:start;border:2px solid var(--ink);border-radius:var(--r);background:#fff;overflow:hidden;transition:transform .3s cubic-bezier(.3,1.6,.5,1)}
+.proj:hover{transform:translateY(-6px) rotate(-1deg)}
+.proj .th{aspect-ratio:4/3;display:grid;place-items:center;background:var(--mist);border-bottom:2px solid var(--ink);color:var(--blue);font-size:44px;text-align:center}
+.proj:nth-child(even) .th{background:var(--sky)}
+.proj .tx{padding:16px 18px}.proj h4{font:700 19px var(--display)}.proj p{color:var(--slate);font-size:14px;margin-top:2px}
+.proj .ph{display:block;font:600 12px var(--body);color:var(--slate);margin-top:4px}
+@media(min-width:900px){.work{display:grid;grid-template-columns:repeat(3,1fr);overflow:visible;margin:48px 0 0;padding:0}.proj{flex:none}}
+
+/* about */
+.about{display:grid;gap:40px;align-items:center}
+.about .big{width:min(100%,380px);aspect-ratio:1;margin:0 auto;border-radius:50%;background:var(--blue);display:grid;place-items:center;position:relative}
+.about .big .sym{width:70%;height:50%;background-image:var(--symw)}
+.about .big:after{content:"";position:absolute;inset:-14px;border:2px dashed #3C79E8;border-radius:50%;animation:spin 30s linear infinite reverse}
+.vals{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}.vals span{padding:10px 18px;border-radius:99px;border:2px solid #fff;font:700 15px var(--body)}
+.vals span:nth-child(2){background:var(--blue);border-color:var(--blue);transform:rotate(-2deg)}
+@media(min-width:900px){.about{grid-template-columns:1.3fr 1fr;gap:80px}}
+
+/* cta */
+.cta{position:relative;overflow:clip;text-align:left}
+.cta .h2{font-size:clamp(40px,11vw,112px);max-width:12ch}.cta .lead{margin:24px 0 32px}
+.cta svg.arr{position:absolute;right:-6%;bottom:-6%;width:min(62vw,540px);opacity:.28;pointer-events:none}
+.cta .wrap{position:relative}
+@media(min-width:900px){.cta svg.arr{opacity:1}}
+.cta .arr .shaft{stroke-dasharray:1;stroke-dashoffset:calc(1 - var(--p,1))}
+
+/* footer */
+footer{background:var(--ink);color:#C5CCD8;padding:56px 0 calc(40px + env(safe-area-inset-bottom));border-top:1px solid #222;font-size:15px}
+.fg{display:grid;gap:36px}.fg .logo{width:150px;height:130px;background:var(--logo) left center/contain no-repeat}
+footer h5{font:700 13px var(--body);color:#fff;margin:0 0 12px}footer ul{list-style:none;margin:0;padding:0;display:grid;gap:4px}
+footer a{display:inline-block;padding:6px 0;text-decoration:none}footer a:hover{color:#fff;text-decoration:underline}
+details{border-top:1px solid #222;padding:14px 0}details summary{cursor:pointer;font-weight:700;color:#fff}details p{margin-top:8px}
+.legal{margin-top:36px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;font-size:14px}
+@media(min-width:900px){.fg{grid-template-columns:2fr 1fr 1.4fr 1fr}}
+
+/* mobile dock */
+.dock{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:90;transform:translateY(160%);transition:transform .4s cubic-bezier(.3,1.4,.5,1)}
+.dock.show{transform:none}.dock .btn{width:100%;min-height:56px;border-color:#fff;font-size:17px}
+@media(min-width:900px){.dock{left:auto;right:24px;bottom:24px;width:auto}.dock .btn{min-height:52px}}
+html.lock{overflow:hidden}
+
+/* cursor */
+.cur{position:fixed;left:0;top:0;width:18px;height:18px;border-radius:50%;background:var(--blue);pointer-events:none;z-index:300;opacity:0;transition:width .2s,height .2s,opacity .2s,margin .2s;mix-blend-mode:normal}
+.cur.on{opacity:.9}.cur.big{width:46px;height:46px;margin:-14px 0 0 -14px;opacity:.35}
+
+/* modal */
+dialog{border:0;padding:0;margin:auto auto 0;width:100%;max-width:100%;max-height:94svh;background:#fff;color:#000;border-radius:28px 28px 0 0;overflow:auto;overscroll-behavior:contain;opacity:0;transform:translateY(40px);transition:opacity .3s,transform .4s cubic-bezier(.2,.9,.2,1),overlay .3s allow-discrete,display .3s allow-discrete}
+dialog[open]{opacity:1;transform:none}@starting-style{dialog[open]{opacity:0;transform:translateY(60px)}}
+dialog::backdrop{background:rgba(0,0,0,.7)}
+@media(min-width:700px){dialog{margin:auto;width:min(680px,calc(100vw - 32px));border-radius:28px;max-height:92svh}}
+.m-head{background:var(--ink);color:#fff;padding:28px 24px 22px;position:relative;border-radius:28px 28px 0 0}
+.m-head:before{content:"";display:block;width:44px;height:5px;border-radius:5px;background:#444;margin:-12px auto 16px}@media(min-width:700px){.m-head:before{display:none}}
+.m-head h2{font:800 clamp(26px,6vw,36px)/1.05 var(--display);padding-right:52px}.m-head p{margin-top:10px;color:#C5CCD8;font-size:15px}
+.x{position:absolute;top:16px;right:16px;width:46px;height:46px;border-radius:50%;border:2px solid #fff;background:transparent;color:#fff;display:grid;place-items:center;font-size:22px;cursor:pointer}.x:hover{background:#fff;color:#000}
+form{padding:24px;display:grid;gap:16px}@media(min-width:700px){form{grid-template-columns:1fr 1fr;padding:28px 32px 32px}.full{grid-column:1/-1}}
+label,legend{display:block;font:700 14px var(--body);margin-bottom:6px;padding:0}.req{color:var(--blue)}
+input,select,textarea{width:100%;font:400 16px var(--body);padding:12px 16px;border:2px solid var(--ink);background:#fff;color:#000;border-radius:16px;min-height:50px}
+textarea{min-height:110px;resize:vertical}input:focus,select:focus,textarea:focus{outline:3px solid var(--sky);border-color:var(--blue)}
+[aria-invalid=true]{border-color:#C4161C;background:#FFF5F5}.err{color:#C4161C;font:600 14px var(--body);margin-top:6px}.err:empty{display:none}
+.phone{display:grid;grid-template-columns:124px 1fr;gap:8px}fieldset{border:0;margin:0;padding:0}
+.radios{display:flex;flex-wrap:wrap;gap:8px}.radios label{margin:0;cursor:pointer}.radios input{position:absolute;opacity:0;width:1px;height:1px;min-height:0}
+.radios span{display:inline-flex;align-items:center;min-height:44px;padding:8px 18px;border:2px solid var(--ink);border-radius:99px;font-weight:600}
+.radios input:checked+span{background:var(--blue);border-color:var(--blue);color:#fff}.radios input:focus-visible+span{outline:3px solid var(--blue);outline-offset:2px}
+details.more{border:0;padding:0;margin-top:8px}details.more summary{color:var(--blue);font-weight:700}
+.checks{display:grid;gap:8px 16px;margin-top:12px}@media(min-width:700px){.checks{grid-template-columns:1fr 1fr}}
+.checks label{display:flex;gap:10px;align-items:center;font-weight:500;margin:0;min-height:36px}.checks input,.agree input{width:22px;height:22px;min-height:0;accent-color:var(--blue);padding:0}
+.agree{display:flex;gap:12px;align-items:flex-start;font-weight:500}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}.note{font-size:13px;color:var(--slate)}.note a{color:var(--blue)}
+.banner{padding:14px 16px;border-radius:16px;background:var(--sky);font:600 15px var(--body)}.banner.bad{background:#FFF5F5;color:#8F1015}.banner:empty{display:none}
+.done{padding:48px 24px 40px;position:relative;overflow:hidden;text-align:center}.done .ok{width:84px;height:84px;margin:0 auto 18px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;font-size:44px;animation:pop2 .6s cubic-bezier(.3,1.8,.5,1)}
+.done h3{font:800 30px var(--display);margin-bottom:10px}.done p{color:var(--slate);max-width:36ch;margin:0 auto 20px}
+.cf{position:absolute;top:30%;left:50%;width:10px;height:14px;pointer-events:none;animation:conf 1.4s cubic-bezier(.2,.8,.3,1) forwards}
+
+/* reveals */
+.js .rv{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.2,.8,.2,1),transform .7s cubic-bezier(.2,.8,.2,1);transition-delay:calc(var(--d,0)*70ms)}
+.js .rv.in{opacity:1;transform:none}
+
+@keyframes up{to{transform:none}} @keyframes fade{to{opacity:1}} @keyframes draw{to{stroke-dashoffset:0}} @keyframes pop{to{transform:scale(1)}}
+@keyframes wob{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(2deg) translateY(-3px)}} @keyframes spin{to{transform:rotate(360deg)}}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}} @keyframes pulse{50%{transform:scale(1.3)}}
+@keyframes marq{to{transform:translateX(-50%)}} @keyframes pop2{from{transform:scale(0)}}
+@keyframes conf{0%{transform:translate(0,0) rotate(0);opacity:1}100%{transform:translate(var(--cx),var(--cy)) rotate(var(--cr));opacity:0}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+ .js .hero h1 .w>span{transform:none}.js .rv,.js .hero .rise{opacity:1;transform:none}.art .shaft{stroke-dashoffset:0}.art .head{transform:none}.art .go{transform:none}.cur{display:none}}
+
+/* ===== Lighter refresh: softer lines, more air, same playful energy ===== */
+:root{--line:#E3E8F1;--r:22px}
+.sec{padding:clamp(56px,9vw,112px) 0}
+.nav{background:rgba(255,255,255,.92);border-bottom:1px solid var(--line);backdrop-filter:saturate(1.4) blur(10px)}
+.burger{border:1.5px solid var(--line)}
+.btn{border-width:1.5px}
+.btn.ghost{border-color:#C9D1E0}
+.h2{font-weight:700;font-size:clamp(32px,6.6vw,64px);line-height:1.04}
+.hero h1{font-weight:700;font-size:clamp(40px,11.2vw,112px)}
+@media(min-width:900px){.hero h1{font-size:clamp(54px,6vw,92px)}}
+.cta .h2{font-size:clamp(36px,8.6vw,88px)}
+.close{font-size:clamp(24px,4.4vw,38px)}
+.steps h3{font-weight:700;font-size:26px}
+.chip{border:1.5px solid var(--line)}
+.pc{border-width:1.5px;border-color:#C9D1E0}.pc.on{border-color:var(--blue)}
+.tabs a{border:1.5px solid #C9D1E0}
+#services .tabs{background:rgba(242,245,250,.96);border-bottom:1px solid var(--line)}
+.cat{padding-top:44px}
+
+/* services cards: flat, bordered, lift on hover (no offset block) */
+.card:before{display:none}
+.card:after{border:1.5px solid var(--line);transition:border-color .2s}
+.card:hover,.card:focus-within{transform:translateY(-5px)}
+.card:hover:after,.card:focus-within:after{border-color:var(--blue)}
+.card .go{border:1.5px solid var(--line);color:var(--blue)}
+.card .go:hover{background:var(--blue);border-color:var(--blue);color:#fff}
+
+/* system section: light, with a blue hub carrying the white-only logo */
+.system{background:#fff}
+.pill{background:var(--mist);border:1.5px solid transparent}
+.pill:hover{background:#fff;border-color:var(--blue)}
+.pill i{color:#fff}.pill small{color:var(--blue)}.pill h3{font-weight:700;font-size:26px}.pill p{color:var(--slate)}
+.hub:after{border:2px dashed var(--blue)}
+
+/* logo on ANY blue background = white-only version (mobile + web) */
+.on-blue,.hub .sym,.about .big .sym{background-image:var(--symw)!important;background-color:transparent!important}
+.sheet .brand .sym{background-color:transparent}
+
+/* about: Vistara Blue panel */
+.blue-sec{background:var(--blue);color:#fff}
+.blue-sec .tag{background:#fff;color:var(--blue)}
+.blue-sec .lead{color:#fff;font-size:clamp(18px,2.3vw,20px)}
+.blue-sec .vals span{border-color:#fff;color:#fff}
+.blue-sec .vals span:nth-child(2){background:#fff;color:var(--blue);border-color:#fff}
+.about .big{background:transparent;border:3px solid #fff}
+.about .big:after{border:2px dashed #fff;opacity:.55}
+
+/* work: montage tiles */
+.proj{border:1.5px solid var(--line)}
+.proj .th{position:relative;display:block;padding:0;background:none;border-bottom:1.5px solid var(--line);overflow:hidden}
+.proj:nth-child(even) .th{background:none}
+.proj .th>svg{width:100%;height:100%;display:block}
+.proj .tx{padding:16px 18px 18px}
+.proj .ph{font-weight:600;color:var(--slate)}
+.mk{position:absolute;aspect-ratio:360/182;background:var(--symw) center/contain no-repeat}
+.fl{transform-box:fill-box;transform-origin:center;animation:floaty 6s ease-in-out infinite}
+.fl.b{animation-delay:-2s}.fl.c{animation-delay:-4s}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+.proj:hover .th>svg .tilt{transform:rotate(-3deg)}
+.tilt{transform-box:fill-box;transform-origin:center;transition:transform .5s cubic-bezier(.3,1.6,.5,1)}
+</style>
+<style id="brand-assets">:root{--symw:url(assets/gv-symbol-white.png);--sym:url(assets/gv-symbol.png);--logo:url(assets/growth-vistara-logo.png)}</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="bar" aria-hidden="true"></div>
+<div class="cur" aria-hidden="true"></div>
+
+<!-- Icon sprite -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id='i-brand' viewBox='0 0 24 24'><path d='M12 3l8 9-8 9-8-9z'/><path d='M12 3v18'/></symbol>
+<symbol id='i-design' viewBox='0 0 24 24'><rect x='4' y='4' width='11' height='11' rx='2'/><circle cx='15' cy='15' r='5'/></symbol>
+<symbol id='i-anim' viewBox='0 0 24 24'><circle cx='16' cy='12' r='4'/><path d='M3 12h6M5 8h4M5 16h4'/></symbol>
+<symbol id='i-video' viewBox='0 0 24 24'><rect x='3' y='5' width='18' height='14' rx='3'/><path d='M10 9l5 3-5 3z'/></symbol>
+<symbol id='i-web' viewBox='0 0 24 24'><rect x='3' y='4' width='18' height='16' rx='3'/><path d='M3 9h18M7 6.5h.01'/></symbol>
+<symbol id='i-seo' viewBox='0 0 24 24'><circle cx='10' cy='10' r='6'/><path d='M15 15l6 6'/></symbol>
+<symbol id='i-sem' viewBox='0 0 24 24'><circle cx='10' cy='10' r='6'/><path d='M15 15l6 6M10 7v6M7 10h6'/></symbol>
+<symbol id='i-smm' viewBox='0 0 24 24'><path d='M5 4h14a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1h-9l-5 4v-4H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1z'/></symbol>
+<symbol id='i-paid' viewBox='0 0 24 24'><circle cx='12' cy='12' r='9'/><circle cx='12' cy='12' r='4'/><path d='M12 3v3'/></symbol>
+<symbol id='i-lead' viewBox='0 0 24 24'><path d='M3 4h18l-7 8v7l-4 2v-9z'/></symbol>
+<symbol id='i-sms' viewBox='0 0 24 24'><rect x='7' y='2' width='10' height='20' rx='3'/><path d='M11 18h2'/></symbol>
+<symbol id='i-mail' viewBox='0 0 24 24'><rect x='3' y='5' width='18' height='14' rx='3'/><path d='M3 7l9 6 9-6'/></symbol>
+<symbol id='i-wa' viewBox='0 0 24 24'><path d='M4 20l1.5-4.5A8.5 8.5 0 1 1 8.5 18.5z'/><path d='M9 10h.01M12 10h.01M15 10h.01'/></symbol>
+<symbol id='i-arrow' viewBox='0 0 24 24'><path d='M7 17L17 7M8 7h9v9'/></symbol>
+<symbol id='i-x' viewBox='0 0 24 24'><path d='M6 6l12 12M18 6L6 18'/></symbol>
+<symbol id='i-menu' viewBox='0 0 24 24'><path d='M4 8h16M4 16h16'/></symbol>
+<symbol id='i-spark' viewBox='0 0 24 24'><path d='M12 3l2 6 6 2-6 2-2 6-2-6-6-2 6-2z'/></symbol>
+<symbol id='i-check' viewBox='0 0 24 24'><path d='M5 12.5l4.5 4.5L19 7'/></symbol>
+<symbol id='i-send' viewBox='0 0 24 24'><path d='M4 12l16-8-6 16-3-7z'/></symbol>
+<symbol id='i-target' viewBox='0 0 24 24'><circle cx='12' cy='12' r='9'/><circle cx='12' cy='12' r='4'/><path d='M12 12l7-7'/></symbol>
+<symbol id='i-plus' viewBox='0 0 24 24'><path d='M12 5v14M5 12h14'/></symbol>
+<symbol id='i-cat1' viewBox='0 0 24 24'><path d='M12 3l8 9-8 9-8-9z'/></symbol>
+</svg>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#home" aria-label="Growth Vistara home"><span class="sym" role="img" aria-label="GV monogram"></span><span>GROWTH<small>VISTARA</small></span></a>
+    <nav class="links" aria-label="Main">
+      <a href="#home">Home</a><a href="#services">Services</a><a href="#work">Work</a><a href="#about">About</a><a href="#contact">Contact</a>
+      <button class="btn blue" type="button" data-open>Let's Grow <svg class="ic"><use href="#i-arrow"/></svg></button>
+    </nav>
+    <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="sheet"><svg class="ic"><use href="#i-menu"/></svg></button>
+  </div>
+</header>
+<div class="sheet" id="sheet" aria-hidden="true">
+  <header><a class="brand" href="#home"><span class="sym"></span><span>GROWTH<small>VISTARA</small></span></a>
+    <button class="burger" id="close-menu" type="button" aria-label="Close menu"><svg class="ic"><use href="#i-x"/></svg></button></header>
+  <nav aria-label="Mobile">
+    <a href="#home">Home <svg class="ic"><use href="#i-arrow"/></svg></a><a href="#services">Services <svg class="ic"><use href="#i-arrow"/></svg></a><a href="#work">Work <svg class="ic"><use href="#i-arrow"/></svg></a><a href="#about">About <svg class="ic"><use href="#i-arrow"/></svg></a><a href="#contact">Contact <svg class="ic"><use href="#i-arrow"/></svg></a>
+  </nav>
+  <button class="btn blue" type="button" data-open>Let's Grow <svg class="ic"><use href="#i-arrow"/></svg></button>
+</div>
+
+<main id="main">
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="wrap">
+    <div>
+      <p class="tag rise"><svg class="ic"><use href="#i-spark"/></svg>Creative × Digital × Performance</p>
+      <h1 aria-label="Your next stage of growth starts here.">
+        <span class="w" aria-hidden="true"><span style="--i:0">Your</span></span>
+        <span class="w" aria-hidden="true"><span style="--i:1">next</span></span>
+        <span class="w" aria-hidden="true"><span style="--i:2">stage</span></span>
+        <span class="w" aria-hidden="true"><span style="--i:3">of</span></span>
+        <span class="w" aria-hidden="true"><span style="--i:4"><span class="hl">growth</span></span></span>
+        <span class="w" aria-hidden="true"><span style="--i:5">starts</span></span>
+        <span class="w" aria-hidden="true"><span style="--i:6">here.</span></span>
+      </h1>
+      <p class="lead rise">We connect creative thinking with digital execution to help brands become more visible, relevant and effective.</p>
+      <div class="ctas rise">
+        <button class="btn blue" type="button" data-open>Let's Get Started <svg class="ic"><use href="#i-arrow"/></svg></button>
+        <a class="btn ghost" href="#services">Explore Our Services</a>
+      </div>
+    </div>
+    <div class="art" aria-hidden="true">
+      <svg class="arrow" viewBox="0 0 400 400"><g class="go">
+        <line class="shaft" pathLength="1" x1="40" y1="360" x2="287" y2="113" stroke="#000" stroke-width="48"/>
+        <polygon class="head" points="200,27 373,27 373,200" fill="#186DFE"/></g>
+        <rect class="dot" x="14" y="344" width="26" height="26" rx="6" fill="#186DFE"/></svg>
+      <div class="badge"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="60" fill="#000"/><defs><path id="circ" d="M60,60 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0"/></defs><text><textPath href="#circ">GROWTH WITH DIRECTION • CLEAR IDEAS •</textPath></text></svg>
+        <div class="c"><svg class="ic" style="width:34%;height:34%;color:#186DFE;stroke-width:2.6"><use href="#i-arrow"/></svg></div></div>
+      <span class="chip a"><i><svg class="ic"><use href="#i-brand"/></svg></i>Brand</span>
+      <span class="chip b"><i><svg class="ic"><use href="#i-web"/></svg></i>Web</span>
+      <span class="chip c2"><i><svg class="ic"><use href="#i-paid"/></svg></i>Ads</span>
+    </div>
+  </div>
+  <div class="marq" aria-hidden="true"><div><span>Logo & Branding<svg class="ic"><use href="#i-spark"/></svg></span><span>Graphic Design<svg class="ic"><use href="#i-spark"/></svg></span><span>Animation<svg class="ic"><use href="#i-spark"/></svg></span><span>Explainer Video<svg class="ic"><use href="#i-spark"/></svg></span><span>Website Design & Development<svg class="ic"><use href="#i-spark"/></svg></span><span>SEO<svg class="ic"><use href="#i-spark"/></svg></span><span>SEM<svg class="ic"><use href="#i-spark"/></svg></span><span>SMM<svg class="ic"><use href="#i-spark"/></svg></span><span>Paid Campaigns<svg class="ic"><use href="#i-spark"/></svg></span><span>Lead Generation<svg class="ic"><use href="#i-spark"/></svg></span><span>Bulk SMS Service<svg class="ic"><use href="#i-spark"/></svg></span><span>Email Marketing<svg class="ic"><use href="#i-spark"/></svg></span><span>WhatsApp Marketing<svg class="ic"><use href="#i-spark"/></svg></span><span>Logo & Branding<svg class="ic"><use href="#i-spark"/></svg></span><span>Graphic Design<svg class="ic"><use href="#i-spark"/></svg></span><span>Animation<svg class="ic"><use href="#i-spark"/></svg></span><span>Explainer Video<svg class="ic"><use href="#i-spark"/></svg></span><span>Website Design & Development<svg class="ic"><use href="#i-spark"/></svg></span><span>SEO<svg class="ic"><use href="#i-spark"/></svg></span><span>SEM<svg class="ic"><use href="#i-spark"/></svg></span><span>SMM<svg class="ic"><use href="#i-spark"/></svg></span><span>Paid Campaigns<svg class="ic"><use href="#i-spark"/></svg></span><span>Lead Generation<svg class="ic"><use href="#i-spark"/></svg></span><span>Bulk SMS Service<svg class="ic"><use href="#i-spark"/></svg></span><span>Email Marketing<svg class="ic"><use href="#i-spark"/></svg></span><span>WhatsApp Marketing<svg class="ic"><use href="#i-spark"/></svg></span></div></div>
+</section>
+
+<!-- PROBLEM -->
+<section class="sec mist problem" data-progress aria-labelledby="t-prob">
+  <div class="wrap grid">
+    <div>
+      <p class="tag rv"><svg class="ic"><use href="#i-spark"/></svg>The problem</p>
+      <h2 class="h2 rv" id="t-prob" style="--d:1">Good brands can get lost in a noisy digital world.</h2>
+      <p class="lead rv" style="margin-top:24px;--d:2">Branding, websites, social media, paid advertising and lead generation are often managed separately. The result: inconsistent messaging and customer journeys that stop halfway.</p>
+      <p class="close rv" style="--d:3">Growth becomes clearer when <b>everything works together.</b></p>
+    </div>
+    <div class="scatter" aria-hidden="true"><div class="pc" style="--i:0;--x:32vw;--y:40px;--r:-7deg"><i><svg class="ic"><use href="#i-brand"/></svg></i>Branding</div><div class="pc" style="--i:1;--x:22vw;--y:-30px;--r:5deg"><i><svg class="ic"><use href="#i-web"/></svg></i>Website</div><div class="pc on" style="--i:2;--x:30vw;--y:50px;--r:-4deg"><i><svg class="ic"><use href="#i-smm"/></svg></i>Social media</div><div class="pc" style="--i:3;--x:14vw;--y:-40px;--r:8deg"><i><svg class="ic"><use href="#i-paid"/></svg></i>Paid ads</div><div class="pc" style="--i:4;--x:26vw;--y:20px;--r:-9deg"><i><svg class="ic"><use href="#i-lead"/></svg></i>Lead generation</div></div>
+  </div>
+</section>
+
+<!-- SYSTEM -->
+<section class="sec system" data-progress aria-labelledby="t-sys">
+  <div class="wrap">
+    <p class="tag rv"><svg class="ic"><use href="#i-spark"/></svg>The Growth Vistara difference</p>
+    <h2 class="h2 rv" id="t-sys" style="--d:1;max-width:17ch">From scattered efforts to a connected growth system.</h2>
+    <div class="sys">
+      <div class="hub" role="img" aria-label="GV monogram at the centre of the system"><span class="sym on-blue"></span></div>
+      <div class="pill"><i><svg class="ic"><use href="#i-target"/></svg></i><small>Strategy</small><h3>Understand</h3><p>Understand the business, audience and opportunity.</p></div>
+      <div class="pill"><i><svg class="ic"><use href="#i-brand"/></svg></i><small>Creative</small><h3>Stand out</h3><p>Build a distinctive brand and compelling communication.</p></div>
+      <div class="pill"><i><svg class="ic"><use href="#i-web"/></svg></i><small>Digital</small><h3>Connect</h3><p>Create the website, content and campaigns that connect with audiences.</p></div>
+      <div class="pill"><i><svg class="ic"><use href="#i-arrow"/></svg></i><small>Growth</small><h3>Convert</h3><p>Turn coordinated activity into measurable opportunities.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="sec mist" id="services" aria-labelledby="t-svc" style="padding-bottom:clamp(48px,8vw,100px)">
+  <div class="wrap">
+    <p class="tag rv"><svg class="ic"><use href="#i-spark"/></svg>13 services, one system</p>
+    <h2 class="h2 rv" id="t-svc" style="--d:1;max-width:13ch">Everything you need to grow. Connected.</h2>
+    <p class="lead rv" style="margin-top:24px;--d:2">From building your brand to reaching the right audience and generating opportunities, our creative and digital services work together towards a common goal.</p>
+    <nav class="tabs" aria-label="Service categories"><a href="#svc-brand"><svg class="ic"><use href="#i-brand"/></svg>Brand & Creative</a><a href="#svc-web"><svg class="ic"><use href="#i-web"/></svg>Web & Digital Presence</a><a href="#svc-perf"><svg class="ic"><use href="#i-paid"/></svg>Digital Marketing & Performance</a><a href="#svc-comm"><svg class="ic"><use href="#i-mail"/></svg>Customer Communication</a></nav>
+    <div class="cats">
+    <div class="cat" id="svc-brand">
+      <h3><span><svg class="ic"><use href="#i-brand"/></svg></span>Brand & Creative</h3><p>Identity, design and storytelling</p>
+      <div class="cards">
+        <article class="card rv" style="--d:0"><div class="i"><svg class="ic"><use href="#i-brand"/></svg></div><h4>Logo & Branding</h4><p>Build a distinctive, consistent brand identity.</p><button class="go" type="button" data-open data-service="Logo & Branding" aria-label="Discuss Logo and Branding">Discuss This Service <svg class="ic"><use href="#i-arrow"/></svg></button></article>
+        <article class="card rv" style="--d:1"><div class="i"><svg class="ic"><use href="#i-design"/></svg></div><h4>Graphic Design</h4><p>Create compelling visual communication across channels.</p><button class="go" type="button" data-open data-service="Graphic Design" aria-label="Discuss Graphic Design">Discuss This Service <svg class="ic"><use href="#i-arrow"/></svg></button></article>
+        <article class="card rv" style="--d:2"><div class="i"><svg class="ic"><use href="#i-anim"/></svg></div><h4>Animation</h4><p>Bring ideas and brand stories to life through motion.</p><button class="go" type="button" data-open data-service="Animation" aria-label="Discuss Animation">Discuss This Service <svg class="ic"><use href="#i-arrow"/></svg></button></article>
+        <article class="card rv" style="--d:3"><div class="i"><svg class="ic"><use href="#i-video"/></svg></div><h4>Explainer Video</h4><p>Simplify complex products, services and ideas through video.</p><button class="go" type="button" data-open data-service="Explainer Video" aria-label="Discuss Explainer Video">Discuss This Service <svg class="ic"><use href="#i-arrow"/></svg></button></article>
+      </div>
+    </div>
+    <div class="cat" id="svc-web">
+      <h3><span><svg class="ic"><use href="#i-web"/></svg></span>Web & Digital Presence</h3><p>Your home on the internet</p>
+      <div class="cards">
+        <article class="card rv" style="--d:0"><div class="i"><svg class="ic"><use href="#i-web"/></svg></div><h4>Website Design & Development</h4><p>Create responsive digital experiences that communicate clearly and guide visitors towards action.</p><button class="go" type="button" data-open data-service="Website Design & Development" aria-label="Discuss Website Design and Development">Discuss This Service <svg class="ic"><use href="#i-arrow"/></svg></button></article>
+      </div>
+    </div>
+    <div class="cat" id="svc-perf">
+      <h3><span><svg class="ic"><use href="#i-paid"/></svg></span>Digital Marketing & Performance</h3><p>Visibility and qualified enquiries</p>
+      <div class="cards">
+        <article class="card rv" style="--d:0"><div class="i"><svg class="ic"><use href="#i-seo"/></svg></div><h4>SEO</h4><p>Improve search visibility and organic discoverability.</p><button class="go" type="button" data-open data-service="SEO" aria-label="Discuss SEO">Discuss This Service <svg class="ic"><use href="#i-arrow"/></svg></button></article>
+        <article class="card rv" style="--d:1"><div class="i"><svg class="ic"><use href="#i-sem"/></svg></div><h4>SEM</h4><p>Reach relevant audiences through search engine marketing.</p><button class="go" type="button" data-open data-service="SEM" aria-label="Discuss SEM">Discuss This Service <svg class="ic"><use href="#i-arrow"/></svg></button></article>
+        <article class="card rv" style="--d:2"><div class="i"><svg class="ic"><use href="#i-smm"/></svg></div><h4>SMM</h4><p>Build audience engagement and brand visibility through social media marketing.</p><button class="go" type="button" data-open data-service="SMM" aria-label="Discuss SMM">Discuss This Service <svg class="ic"><use href="#i-arrow"/></svg></button></article>
+        <article class="card rv" style="--d:3"><div class="i"><svg class="ic"><use href="#i-paid"/></svg></div><h4>Paid Campaigns</h4><p>Plan and manage paid advertising campaigns.</p><button class="go" type="button" data-open data-service="Paid Campaigns" aria-label="Discuss Paid Campaigns">Discuss This Service <svg class="ic"><use href="#i-arrow"/></svg></button></article>
+        <article class="card rv" style="--d:4"><div class="i"><svg class="ic"><use href="#i-lead"/></svg></div><h4>Lead Generation</h4><p>Create campaigns and journeys designed to capture qualified enquiries.</p><button class="go" type="button" data-open data-service="Lead Generation" aria-label="Discuss Lead Generation">Discuss This Service <svg class="ic"><use href="#i-arrow"/></svg></button></article>
+      </div>
+    </div>
+    <div class="cat" id="svc-comm">
+      <h3><span><svg class="ic"><use href="#i-mail"/></svg></span>Customer Communication</h3><p>Reach people where they already are</p>
+      <div class="cards">
+        <article class="card rv" style="--d:0"><div class="i"><svg class="ic"><use href="#i-sms"/></svg></div><h4>Bulk SMS Service</h4><p>Deliver relevant communications through SMS.</p><button class="go" type="button" data-open data-service="Bulk SMS Service" aria-label="Discuss Bulk SMS Service">Discuss This Service <svg class="ic"><use href="#i-arrow"/></svg></button></article>
+        <article class="card rv" style="--d:1"><div class="i"><svg class="ic"><use href="#i-mail"/></svg></div><h4>Email Marketing</h4><p>Engage audiences through targeted email communication.</p><button class="go" type="button" data-open data-service="Email Marketing" aria-label="Discuss Email Marketing">Discuss This Service <svg class="ic"><use href="#i-arrow"/></svg></button></article>
+        <article class="card rv" style="--d:2"><div class="i"><svg class="ic"><use href="#i-wa"/></svg></div><h4>WhatsApp Marketing</h4><p>Support customer engagement through WhatsApp campaigns and messaging.</p><button class="go" type="button" data-open data-service="WhatsApp Marketing" aria-label="Discuss WhatsApp Marketing">Discuss This Service <svg class="ic"><use href="#i-arrow"/></svg></button></article>
+      </div>
+    </div></div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="sec" id="process" aria-labelledby="t-proc">
+  <div class="wrap">
+    <p class="tag rv"><svg class="ic"><use href="#i-spark"/></svg>Our process</p>
+    <h2 class="h2 rv" id="t-proc" style="--d:1;max-width:14ch">Clear thinking. Connected execution.</h2>
+    <ol class="steps" data-progress>
+      <li class="rv"><b>01</b><h3>Discover</h3><p>Understand the business, goals, audience and challenges.</p></li>
+      <li class="rv" style="--d:2"><b>02</b><h3>Define</h3><p>Identify priorities and establish the creative and digital direction.</p></li>
+      <li class="rv" style="--d:4"><b>03</b><h3>Deliver</h3><p>Execute the selected branding, website, creative and marketing activities.</p></li>
+      <li class="rv" style="--d:6"><b>04</b><h3>Develop</h3><p>Review performance, learn from results and identify opportunities to improve.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- WORK -->
+<section class="sec mist" id="work" aria-labelledby="t-work">
+  <div class="wrap">
+    <p class="tag rv"><svg class="ic"><use href="#i-spark"/></svg>Selected work</p>
+    <h2 class="h2 rv" id="t-work" style="--d:1;max-width:14ch">Good thinking deserves great execution.</h2>
+    <div class="work" tabindex="0" aria-label="Selected work. Scroll sideways."><article class="proj"><div class="th" role="img" aria-label="Illustrative montage: Brand identity"><svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="300" fill="#186DFE"/><g class="tilt"><g transform="rotate(-6 135 150)"><rect x="40" y="52" width="190" height="190" rx="22" fill="#fff"/><text x="62" y="160" font-family="Sora,system-ui,sans-serif" font-weight="800" font-size="92" fill="#000" letter-spacing="-4">Aa</text><circle cx="70" cy="204" r="12" fill="#186DFE"/><circle cx="102" cy="204" r="12" fill="#000"/><circle cx="134" cy="204" r="12" fill="#DCE8FF"/><rect x="160" y="196" width="46" height="16" rx="8" fill="#F2F5FA"/></g></g><g class="fl"><g transform="rotate(6 285 150)"><rect x="212" y="96" width="150" height="104" rx="18" fill="#000"/></g></g><path d="M352 46L357.04 58.96L370 64L357.04 69.04L352 82L346.96 69.04L334 64L346.96 58.96Z" fill="#fff"/><path d="M40 250L43.36 258.64L52 262L43.36 265.36L40 274L36.64 265.36L28 262L36.64 258.64Z" fill="#DCE8FF"/><circle cx="360" cy="248" r="9" fill="#fff"/></svg><span class="mk" style="width:28%;left:58%;top:38%;transform:rotate(6deg)"></span></div><div class="tx"><h4>[Project title]</h4><p>Brand identity</p><span class="ph">Placeholder: add approved project</span></div></article><article class="proj"><div class="th" role="img" aria-label="Illustrative montage: Website design"><svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="300" fill="#F2F5FA"/><g class="tilt"><rect x="30" y="40" width="262" height="180" rx="16" fill="#fff" stroke="#000" stroke-width="2"/><circle cx="50" cy="58" r="4.5" fill="#186DFE"/><circle cx="64" cy="58" r="4.5" fill="#000"/><circle cx="78" cy="58" r="4.5" fill="#DCE8FF"/><line x1="30" y1="74" x2="292" y2="74" stroke="#E3E8F1" stroke-width="2"/><rect x="50" y="92" width="130" height="16" rx="8" fill="#000"/><rect x="50" y="116" width="96" height="16" rx="8" fill="#000"/><rect x="50" y="144" width="76" height="26" rx="13" fill="#186DFE"/><rect x="196" y="88" width="76" height="82" rx="12" fill="#DCE8FF"/><circle cx="224" cy="116" r="14" fill="#186DFE"/><polygon points="206,160 236,128 266,160" fill="#fff"/><rect x="50" y="184" width="68" height="22" rx="8" fill="#F2F5FA"/><rect x="126" y="184" width="68" height="22" rx="8" fill="#F2F5FA"/><rect x="202" y="184" width="68" height="22" rx="8" fill="#F2F5FA"/></g><g class="fl b"><rect x="262" y="94" width="96" height="176" rx="18" fill="#000"/><rect x="269" y="108" width="82" height="148" rx="11" fill="#fff"/><rect x="277" y="116" width="66" height="52" rx="9" fill="#186DFE"/><rect x="277" y="178" width="66" height="9" rx="4.5" fill="#000"/><rect x="277" y="194" width="46" height="9" rx="4.5" fill="#C9D1E0"/><rect x="277" y="216" width="66" height="26" rx="13" fill="#DCE8FF"/></g><path d="M168 190 L168 218 L176 211 L182 224 L189 221 L183 208 L194 208 Z" fill="#000" stroke="#fff" stroke-width="2" stroke-linejoin="round"/><path d="M358 34L361.92 44.08L372 48L361.92 51.92L358 62L354.08 51.92L344 48L354.08 44.08Z" fill="#186DFE"/><path d="M34 252L36.8 259.2L44 262L36.8 264.8L34 272L31.2 264.8L24 262L31.2 259.2Z" fill="#186DFE"/></svg></div><div class="tx"><h4>[Project title]</h4><p>Website design</p><span class="ph">Placeholder: add approved project</span></div></article><article class="proj"><div class="th" role="img" aria-label="Illustrative montage: Campaign creative"><svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="300" fill="#DCE8FF"/><g class="tilt"><g transform="rotate(-9 105 150)"><rect x="42" y="56" width="132" height="176" rx="14" fill="#000"/><circle cx="108" cy="126" r="36" fill="#186DFE"/><text x="58" y="198" font-family="Sora,system-ui,sans-serif" font-weight="800" font-size="19" fill="#fff" letter-spacing="-.5">Big idea.</text><rect x="58" y="208" width="70" height="8" rx="4" fill="#5A6270"/></g></g><g class="fl"><g transform="rotate(7 235 130)"><rect x="168" y="42" width="136" height="176" rx="14" fill="#186DFE"/></g></g><g transform="translate(240 128) rotate(7)"><line x1="-34" y1="38" x2="14" y2="-10" stroke="#fff" stroke-width="16"/><polygon points="-8,-40 38,-40 38,6" fill="#fff"/></g><g class="fl c"><rect x="262" y="132" width="106" height="112" rx="14" fill="#fff" stroke="#000" stroke-width="2"/><rect x="278" y="150" width="74" height="42" rx="8" fill="#F2F5FA"/><circle cx="296" cy="171" r="9" fill="#186DFE"/><rect x="278" y="204" width="56" height="9" rx="4.5" fill="#000"/><rect x="278" y="220" width="36" height="9" rx="4.5" fill="#C9D1E0"/></g><path d="M348 34L352.48 45.519999999999996L364 50L352.48 54.480000000000004L348 66L343.52 54.480000000000004L332 50L343.52 45.519999999999996Z" fill="#000"/><path d="M36 251L39.08 258.92L47 262L39.08 265.08L36 273L32.92 265.08L25 262L32.92 258.92Z" fill="#186DFE"/></svg></div><div class="tx"><h4>[Project title]</h4><p>Campaign creative</p><span class="ph">Placeholder: add approved project</span></div></article><article class="proj"><div class="th" role="img" aria-label="Illustrative montage: Social media communication"><svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="300" fill="#000"/><circle cx="320" cy="70" r="64" fill="none" stroke="#186DFE" stroke-width="3"/><circle cx="320" cy="70" r="40" fill="none" stroke="#186DFE" stroke-width="3" opacity=".5"/><g class="tilt"><g transform="rotate(-8 100 150)"><rect x="34" y="70" width="128" height="128" rx="18" fill="#186DFE"/></g></g><path transform="translate(100 134) scale(1.5)" d="M0 14 C-26 -4 -18 -26 0 -11 C18 -26 26 -4 0 14Z" fill="#fff"/><g class="fl"><g transform="rotate(5 215 150)"><rect x="150" y="96" width="128" height="128" rx="18" fill="#fff"/><circle cx="214" cy="160" r="30" fill="#000"/><polygon points="206,146 206,174 230,160" fill="#fff"/></g></g><g class="fl b"><g transform="rotate(-4 320 190)"><rect x="262" y="150" width="108" height="108" rx="18" fill="#DCE8FF"/><path d="M284 180h64a6 6 0 0 1 6 6v26a6 6 0 0 1-6 6h-36l-14 12v-12h-14a6 6 0 0 1-6-6v-26a6 6 0 0 1 6-6z" fill="#186DFE"/></g></g><circle cx="168" cy="92" r="17" fill="#186DFE"/><path d="M168 84v16M160 92h16" stroke="#fff" stroke-width="3.5" stroke-linecap="round"/><path d="M40 26L43.92 36.08L54 40L43.92 43.92L40 54L36.08 43.92L26 40L36.08 36.08Z" fill="#fff"/><path d="M350 256L352.8 263.2L360 266L352.8 268.8L350 276L347.2 268.8L340 266L347.2 263.2Z" fill="#DCE8FF"/></svg></div><div class="tx"><h4>[Project title]</h4><p>Social media communication</p><span class="ph">Placeholder: add approved project</span></div></article><article class="proj"><div class="th" role="img" aria-label="Illustrative montage: Motion graphics and explainer videos"><svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="300" fill="#186DFE"/><g class="tilt"><g transform="rotate(-6 200 150)"><rect x="24" y="92" width="352" height="114" rx="14" fill="#000"/><rect x="46" y="104" width="14" height="9" rx="2" fill="#fff"/><rect x="46" y="188" width="14" height="9" rx="2" fill="#fff"/><rect x="76" y="104" width="14" height="9" rx="2" fill="#fff"/><rect x="76" y="188" width="14" height="9" rx="2" fill="#fff"/><rect x="106" y="104" width="14" height="9" rx="2" fill="#fff"/><rect x="106" y="188" width="14" height="9" rx="2" fill="#fff"/><rect x="136" y="104" width="14" height="9" rx="2" fill="#fff"/><rect x="136" y="188" width="14" height="9" rx="2" fill="#fff"/><rect x="166" y="104" width="14" height="9" rx="2" fill="#fff"/><rect x="166" y="188" width="14" height="9" rx="2" fill="#fff"/><rect x="196" y="104" width="14" height="9" rx="2" fill="#fff"/><rect x="196" y="188" width="14" height="9" rx="2" fill="#fff"/><rect x="226" y="104" width="14" height="9" rx="2" fill="#fff"/><rect x="226" y="188" width="14" height="9" rx="2" fill="#fff"/><rect x="256" y="104" width="14" height="9" rx="2" fill="#fff"/><rect x="256" y="188" width="14" height="9" rx="2" fill="#fff"/><rect x="286" y="104" width="14" height="9" rx="2" fill="#fff"/><rect x="286" y="188" width="14" height="9" rx="2" fill="#fff"/><rect x="316" y="104" width="14" height="9" rx="2" fill="#fff"/><rect x="316" y="188" width="14" height="9" rx="2" fill="#fff"/><rect x="40" y="120" width="76" height="62" rx="8" fill="#fff"/><circle cx="78" cy="151" r="18" fill="#186DFE"/><rect x="124" y="120" width="76" height="62" rx="8" fill="#DCE8FF"/><path d="M140 168 L160 136 L180 168Z" fill="#000"/><rect x="208" y="120" width="76" height="62" rx="8" fill="#186DFE"/><circle cx="230" cy="140" r="7" fill="#fff"/><rect x="224" y="156" width="46" height="9" rx="4.5" fill="#fff"/><rect x="292" y="120" width="76" height="62" rx="8" fill="#F2F5FA"/><rect x="304" y="140" width="52" height="22" rx="11" fill="#000"/></g></g><g class="fl"><circle cx="216" cy="150" r="46" fill="#fff"/><polygon points="204,128 204,172 242,150" fill="#186DFE"/></g><line x1="132" y1="132" x2="168" y2="132" stroke="#fff" stroke-width="6" stroke-linecap="round"/><line x1="112" y1="150" x2="164" y2="150" stroke="#fff" stroke-width="6" stroke-linecap="round"/><line x1="132" y1="168" x2="168" y2="168" stroke="#fff" stroke-width="6" stroke-linecap="round"/><path d="M352 38L356.48 49.519999999999996L368 54L356.48 58.480000000000004L352 70L347.52 58.480000000000004L336 54L347.52 49.519999999999996Z" fill="#fff"/><path d="M44 39L47.08 46.92L55 50L47.08 53.08L44 61L40.92 53.08L33 50L40.92 46.92Z" fill="#DCE8FF"/><circle cx="60" cy="254" r="8" fill="#fff"/></svg></div><div class="tx"><h4>[Project title]</h4><p>Motion graphics &amp; explainer videos</p><span class="ph">Placeholder: add approved project</span></div></article><article class="proj"><div class="th" role="img" aria-label="Illustrative montage: Digital marketing campaigns"><svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="300" fill="#F2F5FA"/><line x1="36" y1="250" x2="364" y2="250" stroke="#C9D1E0" stroke-width="3" stroke-linecap="round"/><rect x="50" y="206" width="34" height="44" rx="8" fill="#000"/><rect x="98" y="174" width="34" height="76" rx="8" fill="#000"/><rect x="146" y="142" width="34" height="108" rx="8" fill="#000"/><rect x="194" y="108" width="34" height="142" rx="8" fill="#000"/><rect x="242" y="70" width="34" height="180" rx="8" fill="#186DFE"/><g class="fl"><polyline points="62,150 134,122 206,104 290,48" fill="none" stroke="#186DFE" stroke-width="5" stroke-dasharray="2 12" stroke-linecap="round"/><polygon points="274,34 322,26 306,72" fill="#186DFE"/></g><g class="fl b"><circle cx="330" cy="188" r="40" fill="#fff" stroke="#000" stroke-width="2"/><circle cx="330" cy="188" r="26" fill="none" stroke="#000" stroke-width="2"/><circle cx="330" cy="188" r="11" fill="#186DFE"/></g><g class="fl c"><rect x="48" y="34" width="96" height="34" rx="17" fill="#fff" stroke="#000" stroke-width="2"/><circle cx="68" cy="51" r="9" fill="#186DFE"/><rect x="84" y="46" width="48" height="10" rx="5" fill="#000"/></g><path d="M374 100L376.8 107.2L384 110L376.8 112.8L374 120L371.2 112.8L364 110L371.2 107.2Z" fill="#000"/></svg></div><div class="tx"><h4>[Project title]</h4><p>Digital marketing campaigns</p><span class="ph">Placeholder: add approved project</span></div></article></div>
+    <p style="margin-top:12px"><button class="btn ghost" type="button" data-open>Explore Our Work</button></p>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="sec blue-sec" id="about" aria-labelledby="t-about">
+  <div class="wrap about">
+    <div>
+      <p class="tag rv"><svg class="ic"><use href="#i-spark"/></svg>About Growth Vistara</p>
+      <h2 class="h2 rv" id="t-about" style="--d:1;max-width:14ch">Creative thinking. Digital execution. One clear direction.</h2>
+      <p class="lead rv" style="margin-top:24px;--d:2">Growth Vistara brings creative design, digital experiences, marketing and customer communication together, so every piece supports the next. We keep the work clear: understand the business, agree a direction, then build and refine what moves it forward.</p>
+      <div class="vals rv" style="--d:3"><span>Clear</span><span>Connected</span><span>Creative</span></div>
+    </div>
+    <div class="big rv" role="img" aria-label="GV monogram"><span class="sym on-blue"></span></div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="sec dark cta" id="contact" style="border-top:1px solid #222;--p:1" data-progress aria-labelledby="t-cta">
+  <svg class="arr" viewBox="0 0 400 400" aria-hidden="true"><line class="shaft" pathLength="1" x1="40" y1="360" x2="287" y2="113" stroke="#186DFE" stroke-width="48"/><polygon points="200,27 373,27 373,200" fill="#186DFE"/></svg>
+  <div class="wrap">
+    <h2 class="h2 rv" id="t-cta">Give your growth a clear direction.</h2>
+    <p class="lead rv" style="--d:1">Tell us what you're building, what you want to improve, and where you need support. Let's explore the right way forward.</p>
+    <div class="ctas rv" style="--d:2">
+      <button class="btn blue" type="button" data-open>Let's Talk About Your Project <svg class="ic"><use href="#i-arrow"/></svg></button>
+      <a class="btn ghost" href="#services">Explore Our Services</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="fg">
+      <div><div class="logo" role="img" aria-label="Growth Vistara"></div><p style="margin-top:12px;max-width:30ch">Growth with direction. Clear ideas. Meaningful growth.</p></div>
+      <div><h5>Explore</h5><ul><li><a href="#home">Home</a></li><li><a href="#services">Services</a></li><li><a href="#work">Work</a></li><li><a href="#about">About</a></li><li><a href="#contact">Contact</a></li></ul></div>
+      <div><h5>Services</h5><ul><li><a href="#svc-brand">Brand &amp; Creative</a></li><li><a href="#svc-web">Web &amp; Digital Presence</a></li><li><a href="#svc-perf">Digital Marketing &amp; Performance</a></li><li><a href="#svc-comm">Customer Communication</a></li></ul></div>
+      <div><h5>Get in touch</h5><ul><li><a href="#contact" data-open>Send an enquiry</a></li></ul>
+        <!-- Add verified email, phone and social links here before launch. --></div>
+    </div>
+    <details><summary>Privacy Policy</summary><p>Draft placeholder. We collect the details you enter in the enquiry form (name, business email, company, optional phone, website, budget and timeline, services, project requirements, contact preference and consent) only to respond to your enquiry. Retention period: [SET]. Contact for access or deletion: [ADD VERIFIED EMAIL]. Replace with legally reviewed text before launch.</p></details>
+    <details><summary>Terms and Conditions</summary><p>Draft placeholder. Replace with legally reviewed terms before launch.</p></details>
+    <div class="legal"><span>© 2026 Growth Vistara. All rights reserved.</span></div>
+  </div>
+</footer>
+
+<div class="dock" id="dock"><button class="btn blue" type="button" data-open>Let's Grow <svg class="ic"><use href="#i-arrow"/></svg></button></div>
+
+<!-- ENQUIRY MODAL -->
+<dialog id="enquiry" aria-labelledby="m-title">
+  <div class="m-head"><h2 id="m-title">Let's talk about your growth.</h2><p>Tell us a little about your business and what you need. We'll use this information to understand your enquiry.</p>
+    <button class="x" type="button" aria-label="Close enquiry form"><svg class="ic"><use href="#i-x"/></svg></button></div>
+  <div class="done" id="done" hidden>
+    <div class="ok"><svg class="ic" style="stroke-width:3"><use href="#i-check"/></svg></div>
+    <h3 id="done-title" tabindex="-1">Got it. Thank you!</h3><p role="status">Your enquiry is in. We'll get back to you using your preferred contact method.</p>
+    <button class="btn blue" type="button" id="done-close">Back to the site</button>
+  </div>
+  <form id="form" novalidate>
+    <div class="banner full" id="banner" aria-live="polite"></div>
+    <div><label for="f-name">Full name <span class="req">*</span></label><input id="f-name" name="name" autocomplete="name" aria-describedby="e-name" required><p class="err" id="e-name"></p></div>
+    <div><label for="f-email">Business email <span class="req">*</span></label><input id="f-email" name="email" type="email" inputmode="email" autocomplete="email" aria-describedby="e-email" required><p class="err" id="e-email"></p></div>
+    <div><label for="f-company">Company / brand name <span class="req">*</span></label><input id="f-company" name="company" autocomplete="organization" aria-describedby="e-company" required><p class="err" id="e-company"></p></div>
+    <div><label for="f-phone">Phone number (optional)</label>
+      <div class="phone"><select name="code" aria-label="Country code"><option value="+91">+91 IN</option><option value="+1">+1 US/CA</option><option value="+44">+44 UK</option><option value="+971">+971 UAE</option><option value="+65">+65 SG</option><option value="+61">+61 AU</option><option value="+49">+49 DE</option></select>
+      <input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel-national" aria-describedby="e-phone"></div><p class="err" id="e-phone"></p></div>
+    <div class="full"><label for="f-service">Service required <span class="req">*</span></label>
+      <select id="f-service" name="service" aria-describedby="e-service" required><option value="">Choose a service</option><option>Logo & Branding</option><option>Graphic Design</option><option>Animation</option><option>Explainer Video</option><option>Website Design & Development</option><option>SEO</option><option>SEM</option><option>SMM</option><option>Paid Campaigns</option><option>Lead Generation</option><option>Bulk SMS Service</option><option>Email Marketing</option><option>WhatsApp Marketing</option></select><p class="err" id="e-service"></p>
+      <details class="more"><summary>Need more than one service?</summary><div class="checks"><label><input type="checkbox" name="more" value="Logo & Branding"> Logo & Branding</label><label><input type="checkbox" name="more" value="Graphic Design"> Graphic Design</label><label><input type="checkbox" name="more" value="Animation"> Animation</label><label><input type="checkbox" name="more" value="Explainer Video"> Explainer Video</label><label><input type="checkbox" name="more" value="Website Design & Development"> Website Design & Development</label><label><input type="checkbox" name="more" value="SEO"> SEO</label><label><input type="checkbox" name="more" value="SEM"> SEM</label><label><input type="checkbox" name="more" value="SMM"> SMM</label><label><input type="checkbox" name="more" value="Paid Campaigns"> Paid Campaigns</label><label><input type="checkbox" name="more" value="Lead Generation"> Lead Generation</label><label><input type="checkbox" name="more" value="Bulk SMS Service"> Bulk SMS Service</label><label><input type="checkbox" name="more" value="Email Marketing"> Email Marketing</label><label><input type="checkbox" name="more" value="WhatsApp Marketing"> WhatsApp Marketing</label></div></details></div>
+    <div class="full"><label for="f-req">Project requirements <span class="req">*</span></label><textarea id="f-req" name="requirements" aria-describedby="e-requirements" required></textarea><p class="err" id="e-requirements"></p></div>
+    <div><label for="f-web">Website URL (optional)</label><input id="f-web" name="website" inputmode="url" autocomplete="url" aria-describedby="e-website"><p class="err" id="e-website"></p></div>
+    <div><label for="f-budget">Approximate budget (optional)</label><select id="f-budget" name="budget"><option value="">Prefer not to say</option><option>Under ₹50,000</option><option>₹50,000 – ₹2,00,000</option><option>₹2,00,000 – ₹5,00,000</option><option>Above ₹5,00,000</option><option>Not sure yet</option></select></div>
+    <div><label for="f-time">Expected timeline (optional)</label><select id="f-time" name="timeline"><option value="">Not sure yet</option><option>Within 1 month</option><option>1 – 3 months</option><option>3+ months</option><option>Flexible</option></select></div>
+    <fieldset><legend>Preferred contact method</legend><div class="radios">
+      <label><input type="radio" name="contactMethod" value="Email" checked><span>Email</span></label><label><input type="radio" name="contactMethod" value="Phone"><span>Phone</span></label><label><input type="radio" name="contactMethod" value="WhatsApp"><span>WhatsApp</span></label></div></fieldset>
+    <div class="hp" aria-hidden="true"><label>Leave empty<input name="hp" tabindex="-1" autocomplete="off"></label></div>
+    <div class="full"><label class="agree"><input type="checkbox" name="consent" aria-describedby="e-consent"><span>I agree that Growth Vistara may contact me about this enquiry. <span class="req">*</span></span></label><p class="err" id="e-consent"></p></div>
+    <div class="full"><button class="btn blue" type="submit" style="width:100%">Send My Enquiry <svg class="ic"><use href="#i-send"/></svg></button></div>
+    <p class="note full">We use these details only to respond to your enquiry. See the Privacy Policy in the footer.</p>
+  </form>
+</dialog>
+
+<script>
+/* ============ SETTINGS: edit these before going live ============ */
+var CONFIG = {
+  // Paste your form service URL here (Formspree, Web3Forms, Getform or your own API).
+  //   Formspree:  https://formspree.io/f/yourFormId
+  //   Web3Forms:  https://api.web3forms.com/submit   (also set FORM_ACCESS_KEY below)
+  FORM_ENDPOINT: '',
+  FORM_ACCESS_KEY: ''
+};
+/* ================================================================= */
+(function () {
+  'use strict';
+  var $ = function (s, c) { return (c || document).querySelector(s); };
+  var $$ = function (s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
+  var root = document.documentElement;
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Menu sheet */
+  var sheet = $('#sheet'), burger = $('#burger');
+  function menu(open) {
+    sheet.classList.toggle('open', open); sheet.setAttribute('aria-hidden', !open);
+    burger.setAttribute('aria-expanded', open); root.classList.toggle('lock', open);
+  }
+  burger.addEventListener('click', function () { menu(true); });
+  $('#close-menu').addEventListener('click', function () { menu(false); });
+  $$('#sheet nav a').forEach(function (a) { a.addEventListener('click', function () { menu(false); }); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && sheet.classList.contains('open')) menu(false); });
+
+  /* Reveal on scroll */
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }); }, { threshold: .15 });
+    $$('.rv').forEach(function (el) { io.observe(el); });
+  } else $$('.rv').forEach(function (el) { el.classList.add('in'); });
+
+  /* Scroll-linked progress (no scroll hijacking) */
+  var prog = $$('[data-progress]'), art = $('.art'), dock = $('#dock'), tick = false;
+  function frame() {
+    tick = false; var vh = innerHeight, y = scrollY, max = root.scrollHeight - vh;
+    root.style.setProperty('--sp', max > 0 ? (y / max).toFixed(4) : 0);
+    prog.forEach(function (el) {
+      if (reduce) { el.style.setProperty('--p', 1); return; }
+      var r = el.getBoundingClientRect(), p = (vh * .85 - r.top) / (Math.min(r.height, vh) * .8);
+      el.style.setProperty('--p', Math.max(0, Math.min(1, p)).toFixed(3));
+    });
+    if (art && !reduce) art.style.setProperty('--hp', Math.min(1, y / (vh * .7)).toFixed(3));
+    dock.classList.toggle('show', y > vh * .55 && !$('#enquiry').open);
+  }
+  function onScroll() { if (!tick) { tick = true; requestAnimationFrame(frame); } }
+  addEventListener('scroll', onScroll, { passive: true }); addEventListener('resize', onScroll); frame();
+
+  /* Fun: logo spin, cursor dot (desktop only) */
+  var brand = $('.nav .brand'); brand.addEventListener('click', function () { brand.classList.add('spin'); setTimeout(function () { brand.classList.remove('spin'); }, 700); });
+  if (matchMedia('(pointer:fine)').matches && !reduce) {
+    var cur = $('.cur'), x = 0, y = 0, cx = 0, cy = 0;
+    addEventListener('mousemove', function (e) { x = e.clientX; y = e.clientY; cur.classList.add('on'); });
+    (function loop() { cx += (x - cx) * .2; cy += (y - cy) * .2; cur.style.transform = 'translate(' + (cx - 9) + 'px,' + (cy - 9) + 'px)'; requestAnimationFrame(loop); })();
+    document.addEventListener('mouseover', function (e) { cur.classList.toggle('big', !!e.target.closest('a,button,.card,.chip,.pc')); });
+  }
+
+  /* Enquiry modal */
+  var dlg = $('#enquiry'), form = $('#form'), banner = $('#banner'), done = $('#done'), opener = null;
+  function open(service, trigger) {
+    opener = trigger || document.activeElement;
+    if (service) $('#f-service').value = service;
+    done.hidden = true; form.hidden = false; banner.textContent = ''; banner.className = 'banner full';
+    menu(false); dlg.showModal(); root.classList.add('lock'); dock.classList.remove('show');
+    setTimeout(function () { $('#f-name').focus({ preventScroll: true }); }, 80);
+  }
+  dlg.addEventListener('close', function () { root.classList.remove('lock'); if (opener && opener.focus) opener.focus(); onScroll(); });
+  dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
+  $('.x', dlg).addEventListener('click', function () { dlg.close(); });
+  $('#done-close').addEventListener('click', function () { dlg.close(); });
+  document.addEventListener('click', function (e) {
+    var t = e.target.closest('[data-open]'); if (!t) return; e.preventDefault(); open(t.getAttribute('data-service') || '', t);
+  });
+
+  /* Validation */
+  var rules = {
+    name: function (v) { return v.trim().length > 1 ? '' : 'Enter your full name.'; },
+    email: function (v) { return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()) ? '' : 'Enter a valid business email, like name@company.com.'; },
+    company: function (v) { return v.trim() ? '' : 'Enter your company or brand name.'; },
+    phone: function (v) { return !v.trim() || /^[0-9 ()\-]{6,16}$/.test(v.trim()) ? '' : 'Use digits only, 6 to 16 characters.'; },
+    service: function (v) { return v ? '' : 'Choose the service you need.'; },
+    requirements: function (v) { return v.trim().length > 9 ? '' : 'Tell us a little more (at least 10 characters).'; },
+    website: function (v) { return !v.trim() || /^(https?:\/\/)?[^\s.]+\.[^\s]{2,}$/.test(v.trim()) ? '' : 'Enter a valid website address.'; },
+    consent: function (_, el) { return el.checked ? '' : 'Please confirm so we can reply to your enquiry.'; }
+  };
+  function err(n, m) { var el = form.elements[n]; $('#e-' + n).textContent = m; m ? el.setAttribute('aria-invalid', 'true') : el.removeAttribute('aria-invalid'); }
+  Object.keys(rules).forEach(function (n) { var el = form.elements[n]; el.addEventListener('blur', function () { if (el.value || el.getAttribute('aria-invalid')) err(n, rules[n](el.value, el)); }); });
+
+  function confetti() {
+    if (reduce) return; var cols = ['#186DFE', '#000', '#DCE8FF', '#186DFE'];
+    for (var i = 0; i < 36; i++) {
+      var c = document.createElement('i'); c.className = 'cf'; c.style.background = cols[i % 4]; if (i % 3 === 0) c.style.borderRadius = '50%';
+      c.style.setProperty('--cx', (Math.random() * 460 - 230) + 'px'); c.style.setProperty('--cy', (Math.random() * 340 - 120) + 'px'); c.style.setProperty('--cr', (Math.random() * 720 - 360) + 'deg');
+      done.appendChild(c); setTimeout(function (n) { n.remove(); }.bind(null, c), 1500);
+    }
+  }
+
+  /* Submit: inputs are kept on failure; success shows only after the service accepts it */
+  form.addEventListener('submit', function (e) {
+    e.preventDefault(); banner.textContent = ''; banner.className = 'banner full';
+    var first = null;
+    Object.keys(rules).forEach(function (n) { var el = form.elements[n], m = rules[n](el.value, el); err(n, m); if (m && !first) first = el; });
+    if (first) { first.focus(); return; }
+    var f = form.elements, btn = $('button[type=submit]', form), label = btn.innerHTML;
+    if (f.hp.value) { return; }                                   /* bot caught by honeypot */
+    if (!CONFIG.FORM_ENDPOINT) {
+      banner.className = 'banner full bad';
+      banner.textContent = 'Development mode: the enquiry form is not connected yet, so this enquiry was NOT sent. Add a form service URL in CONFIG at the bottom of this file.';
+      return;
+    }
+    var more = $$('input[name=more]:checked', form).map(function (i) { return i.value; });
+    var data = {
+      subject: 'New enquiry: ' + f.service.value + ' (' + f.company.value.trim() + ')',
+      name: f.name.value.trim(), email: f.email.value.trim(), company: f.company.value.trim(),
+      phone: f.phone.value.trim() ? f.code.value + ' ' + f.phone.value.trim() : '',
+      service: f.service.value, other_services: more.join(', '), requirements: f.requirements.value.trim(),
+      website: f.website.value.trim(), budget: f.budget.value, timeline: f.timeline.value,
+      preferred_contact: $('input[name=contactMethod]:checked', form).value,
+      consent: 'Yes, agreed on ' + new Date().toISOString(), page: location.href
+    };
+    if (CONFIG.FORM_ACCESS_KEY) data.access_key = CONFIG.FORM_ACCESS_KEY;
+    btn.disabled = true; btn.textContent = 'Sending…';
+    fetch(CONFIG.FORM_ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify(data) })
+      .then(function (r) { return r.json().catch(function () { return {}; }).then(function (b) { if (!r.ok || b.success === false || b.error) throw new Error(); }); })
+      .then(function () { form.hidden = true; done.hidden = false; form.reset(); $('#done-title').focus({ preventScroll: true }); confetti(); })
+      .catch(function () { banner.className = 'banner full bad'; banner.setAttribute('role', 'alert'); banner.textContent = 'Your enquiry was not sent. Please check your connection and try again. Your details are still here.'; })
+      .then(function () { btn.disabled = false; btn.innerHTML = label; });
+  });
+})();
+</script>
+</body>
+</html>
